@@ -1,4 +1,4 @@
-class GrassEater extends LivingCreature {
+class Kerpar1 extends LivingCreature {
     constructor(x, y, index){
         super(x, y, index);
         this.energy = 5;
