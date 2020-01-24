@@ -15,6 +15,7 @@ class Kerpar2 extends LivingCreature {
            [this.x + 1, this.y + 1]
        ];
    }
+   
    chooseCell(character) {
        this.getNewCoordinates();
        return super.chooseCell(character);

@@ -25,6 +25,9 @@ class LivingCreature {
                 if (matrix[y][x] == ch) {
                     found.push(this.directions[i]);
                 }
+                else if (matrix[y][x].index == ch) {
+                    found.push([x, y]);
+                }
             }   
         }
         return found;

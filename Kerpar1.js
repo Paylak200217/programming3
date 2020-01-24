@@ -4,16 +4,18 @@ class Kerpar1 extends LivingCreature {
         this.energy = 5;
         this.acted = false;
     }
+
     getNewCoordinates() {
-        var i = 1;
-        while(this.y + i < matrix.length && this.x + i < matrix[0].length){
-            this.directions.push([this.x + 1 , this.y + 1]);
-            i++;
-        }
-        while(this.y - i >= 0 && this.x - i >= 0){
-            this.directions.push([this.x - 1 , this.y - 1]);
-            i++;
-        }
+        this.directions = [
+            [this.x - 1, this.y - 1],
+            [this.x, this.y - 1],
+            [this.x + 1, this.y - 1],
+            [this.x - 1, this.y],
+            [this.x + 1, this.y],
+            [this.x - 1, this.y + 1],
+            [this.x, this.y + 1],
+            [this.x + 1, this.y + 1]
+        ];
     }
 
     chooseCell(num, num2, num3) {
@@ -87,7 +89,7 @@ class Kerpar1 extends LivingCreature {
      die() {
 
         var black = this.chooseCell(5);
-
+        
         if(black.length > 0){
                 matrix[this.y][this.x] = 0;
 
