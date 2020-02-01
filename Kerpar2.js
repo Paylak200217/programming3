@@ -1,4 +1,6 @@
-class Kerpar2 extends LivingCreature {
+let LivingCreature = require('./LivingCreature')
+
+module.exports = class Kerpar2 extends LivingCreature {
     constructor(x, y, index){
         super(x, y, index);
         this.acted = false;
@@ -22,7 +24,8 @@ class Kerpar2 extends LivingCreature {
     }
 
     move() {
-        var newCell = random(this.chooseCell(0));
+        var emptyCells = this.chooseCell(0);
+		var newCell = emptyCells[Math.floor(Math.random() * emptyCells.length)]
         if (this.acted == false) {
             if (newCell) {
                 var newX = newCell[0];
